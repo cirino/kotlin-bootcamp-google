@@ -37,9 +37,13 @@ fun buildAquarium4() {
 fun makeFish() {
     val shark = Shark()
     println("Shark: ${shark.color}")
+    shark.eat()
+
+    println("---")
 
     val plecostomuse = Plecostomus()
     println("Plecostomuse: ${plecostomuse.color}")
+    plecostomuse.eat()
 }
 
 fun main(args: Array<String>) {
