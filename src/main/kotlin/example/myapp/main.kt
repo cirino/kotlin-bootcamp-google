@@ -34,11 +34,21 @@ fun buildAquarium4() {
     myTower.printSize()
 }
 
+fun makeFish() {
+    val shark = Shark()
+    println("Shark: ${shark.color}")
+
+    val plecostomuse = Plecostomus()
+    println("Plecostomuse: ${plecostomuse.color}")
+}
+
 fun main(args: Array<String>) {
     println("Manda o sub para o CasaDoDev")
 
 //    buildAquarium()
 //    buildAquarium2()
 //    buildAquarium3()
-    buildAquarium4()
+//    buildAquarium4()
+
+    makeFish()
 }
