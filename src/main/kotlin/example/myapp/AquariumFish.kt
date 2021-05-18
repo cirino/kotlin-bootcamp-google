@@ -4,31 +4,23 @@ interface FishAction {
     fun eat()
 }
 
-abstract class AquariumFish: FishAction {
-    abstract val color: String
-    override fun eat() = println("comer")
+interface FishColor {
+    val color: String
 }
 
-//interface AquariumAction {
-//    fun eat()
-//    fun jump()
-//    fun clean()
-//    fun catchFish()
-//    fun swim()  {
-//        println("swim")
-//    }
-//}
-
-class Shark: AquariumFish() {
+class Shark: FishAction, FishColor {
     override val color = "gray"
     override fun eat() {
-        println("Tubarao come peixe")
+        println("come peixe")
     }
 }
 
-class Plecostomus: AquariumFish() {
-    override val color = "gold"
+class Plecostomus: FishAction, FishColor by GoldColor {
     override fun eat() {
-        println("Cascudo come alga")
+        println("come alga")
     }
+}
+
+object GoldColor : FishColor {
+    override val color = "padrao gold"
 }
