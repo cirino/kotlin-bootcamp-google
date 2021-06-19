@@ -8,6 +8,17 @@ interface FishColor {
     val color: String
 }
 
+sealed class Seal
+class SeaLion: Seal()
+class Walrus: Seal()
+
+fun matchSeal(seal: Seal): String {
+    return when(seal){
+        is Walrus -> "walrus"
+        is SeaLion -> "sea lion"
+    }
+}
+
 class Shark: FishAction, FishColor {
     override val color = "gray"
     override fun eat() {
@@ -21,6 +32,6 @@ class Plecostomus: FishAction, FishColor by GoldColor {
     }
 }
 
-object GoldColor : FishColor {
-    override val color = "padrao gold"
+object GoldColor: FishColor {
+    override val color = "padrão gold"
 }
