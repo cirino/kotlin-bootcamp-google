@@ -1,13 +1,5 @@
 package example.myapp
 
-interface FishAction {
-    fun eat()
-}
-
-interface FishColor {
-    val color: String
-}
-
 sealed class Seal
 class SeaLion: Seal()
 class Walrus: Seal()
@@ -19,6 +11,15 @@ fun matchSeal(seal: Seal): String {
     }
 }
 
+interface FishAction {
+    fun eat()
+}
+
+interface FishColor {
+    val color: String
+        get() = "Goldinho"
+}
+
 class Shark: FishAction, FishColor {
     override val color = "gray"
     override fun eat() {
@@ -26,12 +27,17 @@ class Shark: FishAction, FishColor {
     }
 }
 
-class Plecostomus: FishAction, FishColor by GoldColor {
-    override fun eat() {
-        println("come alga")
-    }
-}
+class Plecostomus(fishColor: FishColor = GoldColor):
+    FishAction by PrintingFishAction("come alga"),
+    FishColor by fishColor
+
 
 object GoldColor: FishColor {
     override val color = "padrão gold"
+}
+
+class PrintingFishAction(val food: String): FishAction {
+    override fun eat() {
+        println(food)
+    }
 }
