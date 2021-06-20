@@ -47,7 +47,6 @@ fun makeDecorations2() {
     // desestruturando objeto para variáveis
     val (rock, _, diver) = data4
     println(rock)
-//    println(wood) // _ ignora a posição no objeto
     println(diver)
 }
 
