@@ -80,6 +80,9 @@ fun addItemTo(aquarium: Aquarium<WaterSupply>) {
     println("item adicionado")
 }
 
+fun<T: WaterSupply> isWaterClean(aquarium: Aquarium<T>) {
+    println("aquario está limpo: ${!aquarium.waterSupply.needsProcessing}")
+}
 
 
 
