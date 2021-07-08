@@ -19,6 +19,7 @@
 *.tar.gz
 *.rar
 *.csv
+*.bat
 
 # micronaut launch
 Thumbs.db
@@ -150,7 +151,8 @@ fabric.properties
 
 ### Gradle ###
 .gradle
-gradlew.bat
+~build.gradle.kts
+~!gradlew.bat
 gradlew
 gradle/
 build/
