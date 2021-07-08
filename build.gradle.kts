@@ -15,6 +15,7 @@ repositories {
 dependencies {
     testImplementation(kotlin("test-junit"))
     implementation(kotlin("script-runtime"))
+    implementation("org.jetbrains.kotlin:kotlin-reflect:1.5.20")
 }
 
 tasks.test {
@@ -22,7 +23,7 @@ tasks.test {
 }
 
 tasks.withType<KotlinCompile>() {
-    kotlinOptions.jvmTarget = "11"
+    kotlinOptions.jvmTarget = "15"
 }
 
 application {

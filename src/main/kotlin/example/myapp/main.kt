@@ -46,7 +46,7 @@ fun makeFish() {
     plecostomuse.eat()
 }
 
-fun main(args: Array<String>) {
+fun main() {
     println("Manda o sub para o CasaDoDev")
 
 //    buildAquarium()
