@@ -37,7 +37,6 @@ fun labels() {
     }
 }
 
-
 fun main() {
 //    testAnnotations()
     labels()
